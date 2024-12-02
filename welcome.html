@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to MySpace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to MySpace!</h1>
+    </header>
+    <main>
+        <p>Hello, <span id="username-display">User</span>! You have successfully signed in.</p>
+        <p>Feel free to explore your personal space!</p>
+        <button class="logout-btn" onclick="logout()">Log Out</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 MySpace. All rights reserved.</p>
+    </footer>
+    <script>
+        // JavaScript to display the username (optional)
+        const username = localStorage.getItem("username"); // Retrieve the username from local storage
+        if (username) {
+            document.getElementById("username-display").textContent = username;
+        }
+
+        function logout() {
+            // Clear stored username (optional for simulation)
+            localStorage.removeItem("username");
+            window.location.href = "index.html"; // Redirect to the homepage
+        }
+    </script>
+</body>
+</html>
